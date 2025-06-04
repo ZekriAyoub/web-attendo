@@ -19,7 +19,12 @@ export const useAuthStore = defineStore('auth', {
     * Démarre l'authentification via Google OAuth.
     */
     async signInWithGoogle() {
-      await supabase.auth.signInWithOAuth({ provider: 'google' })
+      await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: window.location.origin
+        }
+      })
     },
     /**
     * Déconnecte l'utilisateur et réinitialise l'état.
