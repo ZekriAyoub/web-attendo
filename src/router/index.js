@@ -8,6 +8,7 @@ import { useAuthStore } from '@/stores/AuthStore'
 import EventRoomView from '@/views/EventRoomView.vue'
 import AttendanceView from '@/views/AttendanceView.vue'
 import { useToast } from 'vue-toastification'
+import { supabase } from '../lib/supabaseClient.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -103,9 +104,7 @@ router.beforeEach(async (to) => {
 
   if (to.meta.requiresAuth) {
     if (!auth.user) {
-      const { data } = await import('../lib/supabaseClient.js').then(({ supabase }) =>
-        supabase.auth.getUser()
-      )
+      const { data } = await supabase.auth.getUser()
       auth.user = data.user
     }
     if (!auth.user) {
