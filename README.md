@@ -51,22 +51,14 @@ git clone https://github.com/ZekriAyoub/web-attendo.git
 ```bash
 npm install
 ```
-
-3. **Configurer Supabase** :
-
-Renommez le fichier .env.example en .env et remplacez les valeurs des constantes avec :
+ 
+3.  **Configurer les variables d'environnement** :
+Créez un fichier `.env` à la racine du projet, puis renseignez les valeurs :
 
 ```bash
-VITE_SUPABASE_URL=https://vaqmlxvbflgyhecshtbs.supabase.co
-VITE_SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZhcW1seHZiZmxneWhlY3NodGJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQxMDgxNTksImV4cCI6MjA1OTY4NDE1OX0.7vAyD9qZK4r56g5RzVHvtiQAWUWFIZxreTwxKarts3U
+VITE_SUPABASE_URL=XXX
+VITE_SUPABASE_KEY=XXX
 ```
-
-### Sécurité
-
-Les valeurs présentes dans le fichier .env.example (notamment VITE_SUPABASE_URL et VITE_SUPABASE_KEY) sont fournies à titre démo et ne contiennent aucune donnée sensible.
-La clé Supabase utilisée est de type anon publique, avec des règles de sécurité RLS activées sur toutes les tables.
-Cela signifie que seules les actions autorisées explicitement sont possibles, même avec cette clé.
-
 
 Lancez le projet :
 
